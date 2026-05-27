@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Efetuada com Sucesso! | Sorotek</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: #f8fafc; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-8 shadow-2xl text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+        
+        <!-- ÍCONE DE SUCESSO -->
+        <div class="w-20 h-20 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 border border-emerald-500/20 animate-bounce">
+            <i class="fas fa-check-double"></i>
+        </div>
+
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Pedido Confirmado!</h1>
+        <p class="text-emerald-400 font-medium text-sm md:text-base mb-6">Obrigado pela sua confiança na Sorotek!</p>
+        
+        <div class="bg-slate-950 rounded-xl p-5 border border-slate-800/80 text-left text-sm space-y-4 mb-6">
+            <h3 class="font-bold text-white text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2 flex justify-between">
+                <span>Resumo do Pedido</span>
+                <span class="text-blue-400 font-mono" id="order-id">#STK-94827</span>
+            </h3>
+            <div class="flex justify-between">
+                <span class="text-slate-400">Produto contratado:</span>
+                <span class="text-white font-semibold" id="product-name">Aguardando Confirmação</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-slate-400">Status do Pagamento:</span>
+                <span class="bg-emerald-500/10 text-emerald-400 text-[11px] font-bold px-2 py-0.5 rounded border border-emerald-500/20">Aprovado via Mercado Pago</span>
+            </div>
+            <div class="flex justify-between border-t border-slate-800/60 pt-3">
+                <span class="text-slate-300 font-medium">Prazo de Início do Briefing:</span>
+                <span class="text-blue-400 font-medium">Imediato (via WhatsApp)</span>
+            </div>
+        </div>
+
+        <div class="text-xs text-slate-400 leading-relaxed mb-8">
+            <p class="mb-2 text-slate-300 font-medium">Próximo passo:</p>
+            <p>Nossa equipe de consultores e designers especializados de Sorocaba entrará em contato nas próximas horas pelo número de telefone cadastrado para iniciarmos a coleta de dados da sua empresa e criação das artes.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://wa.me/5515996136898?text=Olá,%20acabei%20de%20confirmar%20meu%20pedido%20pelo%20site!" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-green-500/10 transition-all">
+                <i class="fab fa-whatsapp text-base"></i> Acelerar via WhatsApp
+            </a>
+            <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                Voltar ao Catálogo
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Simulação inteligente de leitura de parâmetros da URL caso queira customizar dinamicamente o kit comprado
+        const urlParams = new URLSearchParams(window.location.search);
+        const kitParam = urlParams.get('kit');
+        if (kitParam) {
+            document.getElementById('product-name').innerText = kitParam;
+        } else {
+            document.getElementById('product-name').innerText = "Kit de Soluções Corporativas";
+        }
+        // ID randômico para dar profissionalismo
+        document.getElementById('order-id').innerText = '#STK-' + Math.floor(10000 + Math.random() * 90000);
+    </script>
+</body>
+</html>
