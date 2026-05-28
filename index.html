@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorotek - Sorocaba Tecnologia | Catálogo de Kits Digitais e Impressos</title>
+    
+    <!-- ALTAS TAGS DE OTIMIZAÇÃO PARA SEO -->
+    <title>Sorotek | Kits de Marketing Digital, Sites e Impressos em Sorocaba</title>
+    <meta name="description" content="Alavanque sua empresa em Sorocaba com a Sorotek. Kits completos de identidade visual, logotipos, cartões de visita, artes para redes sociais e sites profissionais em WordPress.">
+    <meta name="keywords" content="Sorotek, Sorocaba Tecnologia, marketing digital Sorocaba, identidade visual, criação de sites WordPress, cartão de visita Sorocaba, kit MEI, e-commerce, agência de marketing, portfolio design">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Renato de Carvalho">
+    <link rel="canonical" href="https://sorotek.com.br/">
+    
+    <!-- Meta Tags Open Graph (Para compartilhamento em Redes Sociais e WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sorotek.com.br/">
+    <meta property="og:title" content="Sorotek | Kits de Marketing Digital, Sites e Impressos em Sorocaba">
+    <meta property="og:description" content="Estrutura comercial e marketing completo para micro e pequenas empresas. Designs modernos com o melhor custo-benefício da região.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop">
+
+    <!-- ICONE DE FAVICON -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6062/6062646.png">
+    
+    <!-- GOOGLE ANALYTICS (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Ícones -->
@@ -37,7 +64,6 @@
         .kit-card:hover {
             transform: translateY(-8px);
         }
-        /* Estilos adicionais para os botões flutuantes */
         .btn-flutuante {
             transition: all 0.3s ease;
             transform: translateY(100px);
@@ -50,6 +76,37 @@
         .modal-overlay {
             backdrop-filter: blur(8px);
             transition: opacity 0.3s ease;
+        }
+        /* Estilos da Galeria de Rolagem Automática Infinita */
+        @keyframes scrollTrack {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 6)); }
+        }
+        .gallery-slider {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .gallery-track {
+            display: flex;
+            width: calc(250px * 12);
+            animation: scrollTrack 25s linear infinite;
+        }
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+        .gallery-img {
+            width: 230px;
+            height: 160px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 0.75rem;
+            border: 1px solid #1e293b;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-img:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -81,9 +138,10 @@
                 </div>
             </div>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#catalogo" class="hover:text-blue-400 transition-colors">Catálogo de Kits</a>
+                <a href="#catalogo" class="hover:text-blue-400 transition-colors">Catálogo de Soluções</a>
                 <a href="#beneficios" class="hover:text-blue-400 transition-colors">Por que Escolher?</a>
-                <a href="#contato" class="hover:text-blue-400 transition-colors">Suporte</a>
+                <a href="#galeria" class="hover:text-blue-400 transition-colors">Galeria</a>
+                <a href="#carreiras" class="hover:text-blue-400 transition-colors">Carreiras</a>
             </nav>
             <a href="https://wa.me/5515996136898" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg flex items-center gap-2 shadow-lg shadow-green-500/20 transition-all">
                 <i class="fab fa-whatsapp text-base"></i> Fale Conosco
@@ -272,7 +330,7 @@
                 </div>
             </div>
 
-            <!-- KIT 4: MICRO (DESTACADO COMO MAIS VENDIDO) -->
+            <!-- KIT 4: MICRO -->
             <div class="kit-card bg-slate-900/95 border-2 border-pink-500 rounded-2xl overflow-hidden shadow-2xl shadow-pink-500/10 flex flex-col relative scale-[1.02] md:scale-[1.03] lg:scale-[1.04] z-10">
                 <div class="absolute top-0 right-0 bg-gradient-to-l from-pink-500 to-rose-600 text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-md flex items-center gap-1.5">
                     <i class="fas fa-fire text-amber-300"></i> Mais Vendido
@@ -280,7 +338,6 @@
                 <div class="p-6 border-b border-slate-800 bg-gradient-to-br from-pink-500/20 via-pink-550/5 to-transparent">
                     <div class="flex justify-between items-start mb-4">
                         <span class="bg-pink-500/20 text-pink-400 text-xs font-bold px-2.5 py-1 rounded-md border border-pink-500/30">04 • Solução Completa</span>
-                        <span class="text-xs text-amber-400 font-semibold flex items-center gap-1"><i class="fas fa-star"></i> Recomendado</span>
                     </div>
                     <h3 class="text-2xl font-black text-white">Kit Micro</h3>
                     <p class="text-pink-300/80 text-xs mt-1 font-medium">A engrenagem completa para fazer sua micro ou pequena empresa decolar.</p>
@@ -357,7 +414,7 @@
                     <ul class="space-y-3 text-sm text-slate-300 mb-8">
                         <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span><strong>1000 Cartões de Visitas</strong> (Frente e Verso)</span></li>
                         <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span><strong>2500 Panfletos 10x15cm</strong> (Impressão Frente de alta qualidade)</span></li>
-                        <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span><strong>Banner Fachada 1,0m x 1,5m</strong> com Ilhós</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span>#Banner Fachada 1,0m x 1,5m__ com Ilhós</span></li>
                         <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span>Identidade Visual Completa + Cartão Digital + Artes para as 7 principais Redes Sociais</span></li>
                         <li class="flex items-start gap-2.5"><i class="fas fa-star text-amber-400 mt-0.5 text-xs flex-shrink-0"></i> <span><strong>LOJA VIRTUAL COMPLETA E PRONTA PARA VENDER</strong></span></li>
                         <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-400 mt-0.5 text-xs flex-shrink-0"></i> <span><strong>Grátis:</strong> Registro de Domínio + Hospedagem Premium por 12 meses</span></li>
@@ -393,7 +450,7 @@
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800/80">
                     <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
                     <h4 class="text-lg font-semibold text-white mb-2">Segurança no Pagamento</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Intermediação 100% segura via Mercado Pago. Proteção total para o seu investimento do início ao fim.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Intermediação 100% segura via Mercado Pago. Proteção total para o seu investmento do início ao fim.</p>
                 </div>
                 <!-- VANTAGEM 2 -->
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800/80">
@@ -429,8 +486,65 @@
         </div>
     </section>
 
+    <!-- GALERIA DE IMAGENS COM ROLAGEM AUTOMÁTICA UNIFORME -->
+    <!-- COR DO FUNDO IGUAL AO FUNDO DO CATÁLOGO DE SOLUÇÕES (PADRÃO DA PÁGINA COM OVERLAY DE COMPATIBILIDADE) -->
+    <section class="py-10 overflow-hidden border-b border-slate-900 bg-slate-900/40" id="galeria">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-white text-center md:text-left"><i class="fas fa-images text-blue-500 mr-2"></i> Projetos Recentes & Portfólio</h3>
+            </div>
+            <div class="gallery-slider rounded-xl">
+                <div class="gallery-track">
+                    <!-- Imagens Originais -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop" alt="Marketing Digital" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop" alt="Desenvolvimento Web" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop" alt="Identidade Corporativa" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=400&auto=format&fit=crop" alt="E-commerce Estrutura" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=400&auto=format&fit=crop" alt="Interface de Usuário" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400&auto=format&fit=crop" alt="Design Gráfico" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <!-- Duplicadas para Efeito Infinito Fluído -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop" alt="Marketing Digital" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop" alt="Desenvolvimento Web" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop" alt="Identidade Corporativa" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=400&auto=format&fit=crop" alt="E-commerce Estrutura" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=400&auto=format&fit=crop" alt="Interface de Usuário" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400&auto=format&fit=crop" alt="Design Gráfico" class="gallery-img" onclick="ampliarImagem(this.src, this.alt)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CARREIRAS -->
+    <!-- COR DO FUNDO IGUAL AO FUNDO DA SEÇÃO "POR QUE FECHAR COM A SOROTEK?" (bg-slate-950) -->
+    <section class="bg-slate-950 py-16 border-b border-slate-900" id="carreiras">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">Carreiras</h2>
+                <p class="text-slate-400 mt-2 text-sm md:text-base">Trabalhe conosco e faça parte da transformação digital de empresas in Sorocaba e região.</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex-1">
+                        <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-500/20 uppercase tracking-wider">Vaga Aberta</span>
+                        <h3 class="text-lg font-bold text-white mt-1">Consultor Comercial / Vendedor de Kits</h3>
+                        <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">
+                            Buscamos profissionais proativos para atuar na prospecção B2B de empresas na região de Sorocaba, comercializando nossa linha de Kits de Negócios.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <button onclick="abrirModalVaga()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs px-5 py-3 rounded-xl shadow-lg shadow-blue-600/20 transition-all whitespace-nowrap">
+                            <i class="fas fa-eye mr-1.5"></i> Candidatar-me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RODAPÉ -->
-    <footer class="bg-slate-900 text-slate-400 text-sm py-12" id="contato">
+    <!-- COR DO FUNDO IGUAL AO FUNDO DA SEÇÃO "PROJETOS RECENTES & PORTFÓLIO" (bg-slate-900/40) -->
+    <footer class="bg-slate-900/40 text-slate-400 text-sm py-12" id="contato">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-b border-slate-800 pb-8">
             <div>
                 <div class="flex items-center gap-3 mb-4">
@@ -467,19 +581,17 @@
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
             <span>&copy; 2026 Sorotek - Sorocaba Tecnologia. Todos os direitos reservados. CNPJ: 44.332.788/0001-09 - by Renato de Carvalho.</span>
             <div class="flex gap-4">
-                <a href="politica-privacidade.html" target="_blank" class="hover:underline">Políticas de Privacidade</a>
-                <a href="termos-uso.html" target="_blank" class="hover:underline">Termos de Uso</a>
+                <button onclick="abrirModalLegal('Politica')" class="hover:underline bg-transparent text-slate-500 hover:text-white transition-colors cursor-pointer">Políticas de Privacidade</button>
+                <button onclick="abrirModalLegal('Termos')" class="hover:underline bg-transparent text-slate-500 hover:text-white transition-colors cursor-pointer">Termos de Uso</button>
             </div>
         </div>
     </footer>
 
-    <!-- BOTÕES FLUTUANTES CONTÊINER (WHATSAPP E SETA PARA CIMA) -->
+    <!-- BOTÕES FLUTUANTES CONTÊINER -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-center">
-        <!-- Botão Voltar ao Topo (Seta para cima) -->
         <button id="btnTopo" onclick="voltarAoTopo()" class="btn-flutuante bg-slate-800 hover:bg-blue-600 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-all border border-slate-700 hover:border-blue-500">
             <i class="fas fa-chevron-up text-lg"></i>
         </button>
-        <!-- Botão WhatsApp Flutuante -->
         <a href="https://wa.me/5515996136898" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/30 transition-all hover:scale-110 animate-bounce">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
@@ -487,9 +599,7 @@
 
     <!-- MODAL DE CHECKOUT DINÂMICO CONFORME CORES DO KIT -->
     <div id="modalCompra" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <!-- Overlay escuro -->
         <div class="absolute inset-0 bg-slate-950/80 modal-overlay" onclick="fecharModalCompra()"></div>
-        <!-- Caixa do Modal -->
         <div class="bg-slate-900 border w-full max-w-md rounded-2xl p-6 relative z-10 shadow-2xl transform scale-95 transition-all duration-300" id="modalConteudo">
             <button onclick="fecharModalCompra()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
                 <i class="fas fa-times text-lg"></i>
@@ -507,14 +617,13 @@
                 Você escolheu uma das melhores soluções integradas para potencializar sua identidade comercial. Selecione o método ideal para concluir a transação com total tranquilidade:
             </p>
             <div class="bg-slate-950/60 rounded-xl p-4 border border-slate-800 mb-6 flex justify-between items-center">
-                <span class="text-slate-400 text-xs font-medium">Investimento total</span>
+                <span class="text-slate-400 text-xs font-semibold">Investimento total</span>
                 <span class="text-xl font-black text-emerald-400" id="modalPrecoKit">R$ 0,00</span>
             </div>
             <div class="space-y-3">
                 <a id="modalLinkMP" href="#" class="w-full text-white font-bold text-center py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-sm">
                     <i class="fas fa-shield-alt"></i> Ir para Checkout Seguro
                 </a>
-                <!-- Botão WhatsApp no Modal na cor oficial verde -->
                 <a href="https://wa.me/5515996136898" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold text-center py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-green-500/10 text-sm">
                     <i class="fab fa-whatsapp text-lg"></i> Tirar Dúvidas no WhatsApp
                 </a>
@@ -523,7 +632,87 @@
         </div>
     </div>
 
-    <!-- LÓGICA DO CAROUSEL AUTOMÁTICO, SCROLL E OPERAÇÃO DO MODAL CORES -->
+    <!-- MODAL DE DOCUMENTOS LEGAIS -->
+    <div id="modalLegal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-slate-950/80 modal-overlay" onclick="fecharModalLegal()"></div>
+        <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-2xl p-6 relative z-10 shadow-2xl transform scale-95 transition-all duration-300 flex flex-col max-h-[85vh]">
+            <button onclick="fecharModalLegal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4 border-b border-slate-800 pb-3">
+                <div class="p-2.5 rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
+                    <i class="fas fa-file-contract text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white" id="modalLegalTitulo">Documento Legal</h3>
+            </div>
+            <div class="text-slate-300 text-xs leading-relaxed overflow-y-auto space-y-4 pr-2" id="modalLegalCorpo"></div>
+            <div class="mt-6 border-t border-slate-800 pt-4 flex justify-end">
+                <button onclick="fecharModalLegal()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-all">Fechar Janela</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DA GALERIA DE IMAGENS -->
+    <div id="modalGaleria" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-slate-950/90 modal-overlay" onclick="fecharModalGaleria()"></div>
+        <div class="relative z-10 max-w-4xl w-full flex flex-col items-center">
+            <button onclick="fecharModalGaleria()" class="absolute -top-10 right-0 text-slate-400 hover:text-white text-2xl transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="imgModalAmpliada" src="" alt="" class="max-h-[75vh] w-auto max-w-full rounded-xl border border-slate-800 shadow-2xl object-contain">
+            <p id="captionModalGaleria" class="text-slate-400 text-xs mt-3 font-medium tracking-wide"></p>
+        </div>
+    </div>
+
+    <!-- MODAL DETALHES DA VAGA -->
+    <div id="modalVaga" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-slate-950/80 modal-overlay" onclick="fecharModalVaga()"></div>
+        <div class="bg-slate-900 border border-slate-800 w-full max-w-xl rounded-2xl p-6 relative z-10 shadow-2xl transform scale-95 transition-all duration-300 flex flex-col max-h-[85vh]">
+            <button onclick="fecharModalVaga()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            
+            <div class="flex flex-col gap-1 border-b border-slate-800 pb-4 mb-4">
+                <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-wider w-max">Detalhes da Oportunidade</span>
+                <h3 class="text-xl font-bold text-white mt-1">Consultor Comercial / Vendedor de Kits Corporativos</h3>
+                <span class="text-[11px] text-slate-400 mt-1"><i class="fas fa-briefcase text-blue-500 mr-1"></i> Autônomo / Comissionado</span>
+            </div>
+
+            <div class="text-slate-300 text-xs leading-relaxed overflow-y-auto space-y-4 pr-2 flex-1">
+                <p class="text-slate-400">
+                    Buscamos profissionais proativos e determinados para atuar na prospecção B2B de micro, pequenas e médias empresas, comercializando nossa linha completa de Kits de Negócios (Econômico, MEI, Micro, Pro e E-commerce).
+                </p>
+                <div>
+                    <h4 class="font-semibold text-white mb-1.5"><i class="fas fa-star text-amber-400 mr-2"></i> Responsabilidades & Atividades:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li>Mapear e prospectar ativamente novos clientes na região metropolitana de Sorocaba;</li>
+                        <li>Apresentar de forma consultiva as vantagens estruturais e de marketing dos nossos pacotes;</li>
+                        <li>Conduzir negociações e fechamentos de contratos de forma transparente.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-1.5"><i class="fas fa-check text-blue-400 mr-2"></i> Requisitos:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li>Experiência sólida com vendas consultivas externas ou internas;</li>
+                        <li>Excelente comunicação interpessoal e foco em atingimento de metas;</li>
+                        <li>Conhecimento básico em conceitos de marketing digital e soluções web será considerado diferencial.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 mt-4">
+                    <span class="text-[10px] text-slate-500 block">Remuneração Base</span>
+                    <span class="text-emerald-400 font-bold text-sm">Altas Comissões por Fechamento + Bônus</span>
+                </div>
+            </div>
+
+            <div class="mt-6 border-t border-slate-800 pt-4">
+                <a href="https://wa.me/5515996136898?text=Olá!+Gostaria+de+me+candidatar+à+vaga+de+Vendedor+de+Kits+na+Sorotek." target="_blank" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-center py-3 rounded-xl block transition-all shadow-lg shadow-blue-600/20 text-xs">
+                    <i class="fas fa-paper-plane mr-1.5"></i> Enviar Candidatura
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
@@ -556,10 +745,8 @@
             showSlide(currentSlide);
         }
 
-        // Intervalo automático de 5 segundos
         setInterval(nextSlide, 5000);
 
-        // Lógica de rolagem para exibir o botão "Voltar ao Topo"
         const btnTopo = document.getElementById('btnTopo');
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -576,7 +763,6 @@
             });
         }
 
-        // Dicionário mapeando as classes de cores específicas para renderização dinâmica no modal
         const colorMap = {
             amber: { border: 'border-amber-500/30', iconBox: 'bg-amber-500/10', iconText: 'text-amber-400', iconBorder: 'border-amber-500/20', btn: 'bg-amber-500', btnHover: 'hover:bg-amber-600', textBtn: 'text-slate-950', shadow: 'shadow-amber-500/20' },
             cyan: { border: 'border-cyan-500/30', iconBox: 'bg-cyan-500/10', iconText: 'text-cyan-400', iconBorder: 'border-cyan-500/20', btn: 'bg-cyan-500', btnHover: 'hover:bg-cyan-600', textBtn: 'text-slate-950', shadow: 'shadow-cyan-500/20' },
@@ -586,7 +772,6 @@
             orange: { border: 'border-orange-500/40', iconBox: 'bg-orange-500/10', iconText: 'text-orange-400', iconBorder: 'border-orange-500/20', btn: 'bg-orange-600', btnHover: 'hover:bg-orange-700', textBtn: 'text-white', shadow: 'shadow-orange-500/20' }
         };
 
-        // Abertura com injeção estrutural de classes utilitárias baseadas na cor solicitada
         function abrirModalCompra(nomeKit, linkMP, precoKit, corChave) {
             document.getElementById('modalNomeKit').innerText = nomeKit;
             document.getElementById('modalPrecoKit').innerText = precoKit;
@@ -597,12 +782,10 @@
             const iconContainer = document.getElementById('modalIconContainer');
             const btnMP = document.getElementById('modalLinkMP');
             
-            // Limpa classes variantes injetadas anteriormente
             conteudo.className = "bg-slate-900 border w-full max-w-md rounded-2xl p-6 relative z-10 shadow-2xl transform scale-95 transition-all duration-300";
             iconContainer.className = "p-2.5 rounded-xl border";
             btnMP.className = "w-full font-bold text-center py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-sm";
 
-            // Adiciona as novas cores customizadas associadas ao kit escolhido
             const config = colorMap[corChave] || colorMap['amber'];
             conteudo.classList.add(config.border);
             iconContainer.classList.add(config.iconBox, config.iconText, config.iconBorder);
@@ -616,10 +799,62 @@
         function fecharModalCompra() {
             const modal = document.getElementById('modalCompra');
             const conteudo = document.getElementById('modalConteudo');
-            
             modal.classList.add('opacity-0', 'pointer-events-none');
             conteudo.classList.remove('scale-100');
             conteudo.classList.add('scale-95');
+        }
+
+        function abrirModalLegal(tipo) {
+            const modal = document.getElementById('modalLegal');
+            const titulo = document.getElementById('modalLegalTitulo');
+            const corpo = document.getElementById('modalLegalCorpo');
+            
+            if (tipo === 'Politica') {
+                titulo.innerText = 'Políticas de Privacidade';
+                corpo.innerHTML = `
+                    <p class="font-semibold text-white">1. Coleta de Informações</p>
+                    <p class="text-slate-400">A Sorotek - Sorocaba Tecnologia preza pela transparência e segurança de seus usuários. Coletamos dados básicos de contato fornecidos de forma voluntária por meio dos nossos canais de atendimento e redirecionamentos seguros.</p>
+                    <p class="font-semibold text-white mt-3">2. Uso dos Dados</p>
+                    <p class="text-slate-400">Qualquer informação coletada é estritamente utilizada para o processamento, personalização dos pacotes comerciais e suporte técnico regional aos nossos clientes contratantes em Sorocaba.</p>
+                    <p class="font-semibold text-white mt-3">3. Security e Criptografia</p>
+                    <p class="text-slate-400">Não armazenamos dados bancários. Nossas transações financeiras ocorrem de ponta a ponta sob a infraestrutura criptografada do Mercado Pago.</p>
+                `;
+            } else {
+                titulo.innerText = 'Termos de Uso';
+                corpo.innerHTML = `
+                    <p class="font-semibold text-white">1. Escopo de Entrega</p>
+                    <p class="text-slate-400">Os Kits de Marketing Digital e Impressos da Sorotek obedecem ao escopo claro detalhado nesta página. Alterações posteriores seguem o regimento do briefing aprovado.</p>
+                    <p class="font-semibold text-white mt-3">2. Responsabilidades de Domínios e Hospedagem</p>
+                    <p class="text-slate-400">Para os pacotes avançados, a cortesia de 12 meses de servidor garante total autonomia de gestão do código final ao cliente após a entrega.</p>
+                    <p class="font-semibold text-white mt-3">3. Transações Comerciais</p>
+                    <p class="text-slate-400">O pagamento direto via PIX garante as condições promocionais descritas de forma totalmente clara e livre de surpresas.</p>
+                `;
+            }
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function fecharModalLegal() {
+            document.getElementById('modalLegal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function ampliarImagem(src, alt) {
+            const modal = document.getElementById('modalGaleria');
+            document.getElementById('imgModalAmpliada').src = src;
+            document.getElementById('captionModalGaleria').innerText = alt;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function fecharModalGaleria() {
+            document.getElementById('modalGaleria').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function abrirModalVaga() {
+            const modal = document.getElementById('modalVaga');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function fecharModalVaga() {
+            document.getElementById('modalVaga').classList.add('opacity-0', 'pointer-events-none');
         }
     </script>
 
